@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site-Specified</title>
+    <link rel="icon" type="image/x-icon" href="imgs/IndexFavicon.png">
 
     <style>
         * {
@@ -13,9 +14,39 @@
             margin: 0;
         }
 
+        @font-face {
+            font-family: UntitledSans;
+            src: url(fonts/GaramondNarrowLightITC-Reg.otf);
+        }
+
+        @font-face {
+            font-family: UntitledSerif;
+            src: url(fonts/GaramondNarrowLightITC-Reg.otf);
+        }
+
+        body {
+            background-image: url('imgs/sky4.png');
+
+        }
+
+        h1 {
+            font-family: UntitledSans;
+            font-size: 420px;
+            line-height: 380px;
+            color: whitesmoke;
+            position: absolute;
+        }
+
+        h2 {
+            font-family: UntitledSerif;
+            font-size: 50px;
+            color: whitesmoke;
+            position: absolute;
+        }
+        
         main {
-            width: 5000px;
-            height: 3000px;
+            width: 4000px;
+            height: 2500px;
         }
         .site {
             position: absolute;
@@ -28,13 +59,15 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-            color: white;
+            color: whitesmoke;
         }
         .site-coordinates {
-            font-family: sans-serif;
+            font-family: UntitledSans;
+            font-size: 20px;
         }
         .site-coordinates-alt {
-            font-family: serif;
+            font-family: UntitledSerif;
+            font-size: 20px;
             display: none;
         }
         .site:hover .site-coordinates-alt {
@@ -56,10 +89,10 @@
             top: 0;
             left: 0;
             border: unset;
-            background-color: gray;
+            background-color: #364e4f;
             z-index: 9;
-            transform: scale(0);
             transition: 1s;
+            opacity: 0;
             pointer-events:none;
         }
         #portal-exit {
@@ -69,9 +102,12 @@
             top: 10px;
             right: 10px;
             cursor: pointer;
-            background-color: white;
+            /* background-color: whitesmoke; */
+            color: whitesmoke;
+            border-radius: 50%;
             width: 50px;
             height: 50px;
+            border: 2px solid whitesmoke;
             line-height: 1em;
             align-items: center;
             justify-content: center;
@@ -82,20 +118,93 @@
 
 <body>
 
+    <div>
+       <h1 style="top: 50px; left: 30px">Site-Specified</h1> 
+    </div>
+
     <main>
+    
+        
         <iframe src="" id="portal"></iframe>
         <button id="portal-exit" onclick="portalOut()">X</button>
 
-        <button class="site" style="top: 1000px; left: 1000px; width: 500px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
-            <p class="site-coordinates">coordinates</p>
-            <p class="site-coordinates-alt">dune</p>
+        <button class="site" style="top: 440px; left: 1520px; width: 300px;"onclick="portalIn(`https://kaelamkennedy.github.io/location-works/cove-site/`)">
+            <p class="site-coordinates">41°27'43.8"N 71°19'35.9"W</p>
+            <p class="site-coordinates-alt">Cove</p>
+            <img src="imgs/cove.jpg">
+        </button>
+
+        <button class="site" style="top: 180px; left: 2000px; width: 500px;"onclick="portalIn(`https://kaelamkennedy.github.io/location-works/POND_4127'43.8N_7119'35.9W_2022_12_08_05_27_15/`)">
+            <p class="site-coordinates">41°27'43.8"N 71°19'35.9"W</p>
+            <p class="site-coordinates-alt">Pond</p>
+            <img src="imgs/pond.jpg">
+        </button>
+
+        <button class="site" style="top: 400px; left: 3100px; width: 600px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°04'47.1"N 70°10'18.1"W</p>
+            <p class="site-coordinates-alt">Dune</p>
             <img src="imgs/moss1blur.jpg">
         </button>
 
-        <button class="site" style="top: 300px; left: 4000px; width: 500px;"onclick="portalIn('https://www.are.na/kaela-kennedy')">
-            <p class="site-coordinates">coordinates</p>
-            <p class="site-coordinates-alt">pond</p>
-            <img src="imgs/pond.jpg">
+        <button class="site" style="top: 300px; left: 3000px; width: 275px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Bog</p>
+            <img src="imgs/bogbackground.jpg">
+        </button>
+
+        <button class="site" style="top: 1400px; left: 1200px; width: 550px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Woods</p>
+            <img src="imgs/tinywoods.jpg">
+        </button>
+
+        <button class="site" style="top: 1400px; left: 3200px; width: 700px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Chasm</p>
+            <img src="imgs/chasmcrop.jpg">
+        </button>
+
+        <button class="site" style="top: 1000px; left: 2000px; width: 400px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Holding-1</p>
+            <img src="imgs/holding-place-01.png">
+        </button>
+
+        <button class="site" style="top: 2000px; left: 3000px; width: 400px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Holding-2</p>
+            <img src="imgs/holding-place-01.png">
+        </button>
+
+        <button class="site" style="top: 1800px; left: 2100px; width: 400px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Mountain</p>
+            <img src="imgs/mountain2.jpg">
+        </button>
+
+        <button class="site" style="top: 1700px; left: 400px; width: 500px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Holding-4</p>
+            <img src="imgs/holding-place-01.png">
+        </button>
+
+
+        <button class="site" style="top: 2200px; left: 700px; width: 300px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Holding-5</p>
+            <img src="imgs/mountain.jpg">
+        </button>
+
+        <button class="site" style="top: 1500px; left: 1000px; width: 300px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Holding-6</p>
+            <img src="imgs/holding-place-01.png">
+        </button>
+
+        <button class="site" style="top: 1500px; left: 2800px; width: 300px;" onclick="portalIn('https://en.wikipedia.org/wiki/Main_Page')">
+            <p class="site-coordinates">42°08'03.9"N 71°42'51.3"W</p>
+            <p class="site-coordinates-alt">Holding-6</p>
+            <img src="imgs/holding-place-01.png">
         </button>
 
     </main>
@@ -104,7 +213,7 @@
     <script>
         function portalIn(destinationURL) {
             let domPortal = document.querySelector("#portal");
-            domPortal.style.transform = "scale(1)";
+            domPortal.style.opacity = "1";
             domPortal.style.pointerEvents = "all";
             domPortal.src = destinationURL;
 
@@ -114,7 +223,7 @@
         function portalOut() {
             let domPortal = document.querySelector("#portal");
             domPortal.style.pointerEvents = "none";
-            domPortal.style.transform = "scale(0)";
+            domPortal.style.opacity = "0";
             let domPortalExit = document.querySelector("#portal-exit");
             domPortalExit.style.display = "none";
             setTimeout(function () {
